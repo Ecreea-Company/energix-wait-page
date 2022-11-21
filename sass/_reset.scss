@@ -1,0 +1,20 @@
+@use 'mixinsfunc';
+@mixin arreglar-imagen {
+    background: {
+        size: cover;
+        repeat: no-repeat;
+        position: center;
+    }
+    ;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/banner-energix.png');
+    @include arreglar-imagen;
+    font-family: 'Roboto';
+}

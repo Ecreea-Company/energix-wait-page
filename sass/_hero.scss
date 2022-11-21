@@ -1,0 +1,55 @@
+@use 'mixinsfunc';
+@media (max-width: 550px) {}
+
+.hero {
+    background-color: rgba($color: black, $alpha: 0.1);
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #1810DF, $alpha: 0.9);
+        mix-blend-mode: multiply;
+    }
+    &__container {
+        position: relative;
+        height: calc(100vh - 70px);
+        @include mixinsfunc.crear-flexbox(center);
+    }
+    &__texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        color: white;
+        margin-left: mixinsfunc.pixeles-rem(60);
+        @media (max-width: 550px) {
+            align-items: center;
+            margin-left: mixinsfunc.pixeles-rem(0);
+        }
+    }
+    &__title {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+        text-align: left;
+        @media (max-width: 550px) {
+            text-align: center;
+        }
+    }
+    &__subtitle {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        padding-top: mixinsfunc.pixeles-rem(50);
+        text-align: center;
+    }
+    &__icons {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin: 2rem 0;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        & .icon {
+            align-items: center;
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}
