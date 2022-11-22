@@ -9,6 +9,7 @@
 }
 @media (max-width: 550px) {
   .nav {
+    max-width: 12.5rem;
     margin: auto;
   }
 }
